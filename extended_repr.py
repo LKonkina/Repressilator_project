@@ -37,9 +37,10 @@ def init(cell):
     # Specify mean and distribution of initial cell size
     cell.targetVol = 3.0 + random.uniform(0.0,0.5)
     # Specify growth rate of cells
-    cell.growthRate = 0.6
+    # cell.growthRate = 0.6
+    cell.growthRate = 1.0
     # Specify initial concentration of chemical species
-    cell.species[:] = [0,0,0,0,0,0,0,0,0] #,0,0,0
+    cell.species[:] = [0,0,0,0,0,0,0,0,0]
 
 
 def specRateCL():
@@ -125,7 +126,7 @@ def specRateCL():
 def update(cells):
     #Iterate through each cell and flag cells that reach target size for division
     for (id, cell) in cells.items():
-        cell.color = [numpy.clip((cell.species[1])/10000,0.0,1.0), numpy.clip((cell.species[4])/10000,0.0,1.0), numpy.clip((cell.species[7])/10000,0.0,1.0)]
+        cell.color = [cell.species[1]/500, cell.species[4]/500, cell.species[7]/500]
         if cell.volume > cell.targetVol:
             a = 1
             cell.asymm = [a,1]
