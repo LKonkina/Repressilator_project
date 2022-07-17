@@ -107,7 +107,7 @@ def specRateCL():
     float plac_expr_rate = (a0_plac+a1_plac*plac_r)/(1+plac_r);
     rates[1] = plac_expr_rate - (mcherry_degr_rate + growthRate)*mcherry;
     rates[9] = plac_expr_rate - (scbb_degr_rate + growthRate)*scbb;
-    rates[2] = scbb * scb2_k2 - scb2 * scb2_degr_rate;
+    rates[2] = scbb * scb2_k2 - (scb2_degr_rate + growthRate)*scb2;
 
     float pscb_r = (scb2/k_pscb)**n_pscb;
     float pscb_expr_rate = (a0_pscb+a1_pscb*pscb_r)/(1+pscb_r);
@@ -117,7 +117,7 @@ def specRateCL():
     float ptetr_expr_rate = (a0_ptetr+a1_ptetr*ptetr_r)/(1+ptetr_r);
     rates[4] = ptetr_expr_rate - (mven_degr_rate + growthRate)*mven;
     rates[10] = ptetr_expr_rate - (cini_degr_rate + growthRate)*cini;
-    rates[5] = cini * c14_k2 - c14 * c14_degr_rate;
+    rates[5] = cini * c14_k2 - (c14_degr_rate + growthRate)*c14;
 
     float pcin_r = (c14/k_pcin)**n_pcin;
     float pcin_expr_rate = (a0_pcin+a1_pcin*pcin_r)/(1+pcin_r);
@@ -127,7 +127,7 @@ def specRateCL():
     float pci_expr_rate = (a0_pci+a1_pci*pci_r)/(1+pci_r);
     rates[7] = pci_expr_rate - (cfp_degr_rate + growthRate)*cfp;
     rates[11] = pci_expr_rate - (rhli_degr_rate + growthRate)*rhli;
-    rates[8] = rhli * c4_k2 - c4 * c4_degr_rate;
+    rates[8] = rhli * c4_k2 - (c4_degr_rate + growthRate)*c4;
 
     float prhl_r = (c4/k_prhl)**n_prhl;
     float prhl_expr_rate = (a0_prhl+a1_prhl*prhl_r)/(1+prhl_r);

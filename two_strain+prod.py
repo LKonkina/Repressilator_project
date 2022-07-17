@@ -121,7 +121,7 @@ def specRateCL(): # Add if/else, new species
         float plac_expr_rate = (a0_plac+a1_plac*plac_r)/(1+plac_r);
         rates[3] = plac_expr_rate - (mcherry_degr_rate + growthRate)*mcherry;
         rates[7] = plac_expr_rate - (cini_degr_rate + growthRate)*cini;
-        rates[0] = cini * c14_k2 - c14 * c14_degr_rate + Dc14*(c14-c14_in)*area/gridVolume;
+        rates[0] = cini * c14_k2 - (c14_degr_rate + growthRate)*c14 + Dc14*(c14-c14_in)*area/gridVolume;
         rates[1] = Dc4*(c4-c4_in)*area/gridVolume - c4_degr_rate*c4;
         
         } else {
@@ -138,7 +138,7 @@ def specRateCL(): # Add if/else, new species
         float ptetr_expr_rate = (a0_ptetr+a1_ptetr*ptetr_r)/(1+ptetr_r);
         rates[6] = ptetr_expr_rate - (cfp_degr_rate + growthRate)*cfp; 
         rates[8] = ptetr_expr_rate - (rhli_degr_rate + growthRate)*rhli;
-        rates[1] = rhli * c4_k2 - c4 * c4_degr_rate + Dc4*(c4-c4_in)*area/gridVolume;
+        rates[1] = rhli * c4_k2 - (c4_degr_rate + growthRate)*c4 + Dc4*(c4-c4_in)*area/gridVolume;
 
         rates[0] = Dc14*(c14-c14_in)*area/gridVolume - c14_degr_rate*c14;
         }
